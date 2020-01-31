@@ -1,4 +1,4 @@
-package com.practice.web.dto;
+package com.practice.web.hello.dto;
 
 import lombok.Builder;
 import lombok.Getter;
