@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/notice")
+@RequestMapping("/api/v1/notices")
 @RequiredArgsConstructor
 public class NoticeController {
     private final NoticeService noticeService;

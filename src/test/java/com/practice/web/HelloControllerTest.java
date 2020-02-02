@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class HelloControllerTest {
 
 
-   //테스트 클래스에서 테스트 된 클래스에는 @InjectMocks 주석을 달아야 한다
+    //테스트 클래스에서 테스트 된 클래스에는 @InjectMocks 주석을 달아야 한다
     @InjectMocks
     private HelloController helloController;
 

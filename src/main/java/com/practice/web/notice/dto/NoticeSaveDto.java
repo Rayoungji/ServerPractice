@@ -14,6 +14,13 @@ public class NoticeSaveDto {
     private String content;
     private String author;
 
+    @Builder
+    public NoticeSaveDto(String title, String content, String author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
+
     public Notice toEntity() {
         Notice notice = Notice.builder()
                 .title(title)

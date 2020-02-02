@@ -27,5 +27,4 @@ public class NoticeService {
         notice1.update(noticeUpdateDto);
         return noticeRepository.save(notice1);
     }
-
 }
