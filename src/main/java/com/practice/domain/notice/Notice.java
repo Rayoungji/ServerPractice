@@ -1,6 +1,7 @@
 package com.practice.domain.notice;
 
 
+import com.practice.domain.JpaBasePersistable;
 import com.practice.web.notice.dto.NoticeUpdateDto;
 import lombok.*;
 
@@ -9,10 +10,8 @@ import javax.persistence.*;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Notice {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@AttributeOverride(name = "id", column = @Column(name = "notice_id"))
+public class Notice extends JpaBasePersistable {
 
     @Column(nullable = false)
     private String title;

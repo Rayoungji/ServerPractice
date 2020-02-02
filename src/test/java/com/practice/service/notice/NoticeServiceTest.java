@@ -4,7 +4,6 @@ package com.practice.service.notice;
 import com.practice.domain.notice.Notice;
 import com.practice.domain.notice.NoticeRepository;
 import com.practice.web.notice.dto.NoticeUpdateDto;
-import org.apache.juli.logging.Log;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -15,7 +14,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.not;
 import static org.mockito.BDDMockito.given;
 
 
