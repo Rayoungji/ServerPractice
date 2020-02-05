@@ -15,16 +15,19 @@ import org.springframework.web.bind.annotation.*;
 public class NoticeController {
     private final NoticeService noticeService;
 
+    //저장
     @PostMapping
     public Long saveNotice(@RequestBody NoticeSaveDto noticeSaveDto) {
         return noticeService.saveNotice(noticeSaveDto.toEntity());
     }
 
+    //조화
     @GetMapping("/{id}")
     public NoticeGetDto getNotice(@PathVariable Long id) {
         return new NoticeGetDto(noticeService.getNotice(id));
     }
 
+    //수정
     @PutMapping("/{id}")
     public Notice updateNotice(@PathVariable Long id, @RequestBody NoticeUpdateDto noticeUpdateDto) {
         return noticeService.updateNotice(id, noticeUpdateDto);
