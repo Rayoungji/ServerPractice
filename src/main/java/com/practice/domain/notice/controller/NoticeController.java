@@ -1,13 +1,12 @@
-package com.practice.web.notice.controller;
+package com.practice.domain.notice.controller;
 
 
-import com.practice.domain.notice.Notice;
-import com.practice.service.notice.NoticeService;
-import com.practice.web.notice.dto.NoticeGetDto;
-import com.practice.web.notice.dto.NoticeSaveDto;
-import com.practice.web.notice.dto.NoticeUpdateDto;
+import com.practice.domain.notice.domain.Notice;
+import com.practice.domain.notice.service.NoticeService;
+import com.practice.domain.notice.dto.NoticeGetDto;
+import com.practice.domain.notice.dto.NoticeSaveDto;
+import com.practice.domain.notice.dto.NoticeUpdateDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

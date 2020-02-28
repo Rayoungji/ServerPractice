@@ -1,9 +1,9 @@
 package com.practice.web.notice.controller;
 
-import com.practice.domain.notice.Notice;
-import com.practice.domain.notice.NoticeRepository;
-import com.practice.web.notice.dto.NoticeSaveDto;
-import com.practice.web.notice.dto.NoticeUpdateDto;
+import com.practice.domain.notice.domain.Notice;
+import com.practice.domain.notice.domain.NoticeRepository;
+import com.practice.domain.notice.dto.NoticeSaveDto;
+import com.practice.domain.notice.dto.NoticeUpdateDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;

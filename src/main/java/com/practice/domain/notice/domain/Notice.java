@@ -1,8 +1,8 @@
-package com.practice.domain.notice;
+package com.practice.domain.notice.domain;
 
 
 import com.practice.domain.JpaBasePersistable;
-import com.practice.web.notice.dto.NoticeUpdateDto;
+import com.practice.domain.notice.dto.NoticeUpdateDto;
 import lombok.*;
 
 import javax.persistence.*;

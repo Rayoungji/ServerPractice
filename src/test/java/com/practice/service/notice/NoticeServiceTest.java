@@ -1,9 +1,10 @@
 package com.practice.service.notice;
 
 
-import com.practice.domain.notice.Notice;
-import com.practice.domain.notice.NoticeRepository;
-import com.practice.web.notice.dto.NoticeUpdateDto;
+import com.practice.domain.notice.domain.Notice;
+import com.practice.domain.notice.domain.NoticeRepository;
+import com.practice.domain.notice.service.NoticeService;
+import com.practice.domain.notice.dto.NoticeUpdateDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

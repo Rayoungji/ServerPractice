@@ -1,4 +1,4 @@
-package com.practice.web.notice.dto;
+package com.practice.domain.notice.dto;
 
 import lombok.Builder;
 import lombok.Getter;

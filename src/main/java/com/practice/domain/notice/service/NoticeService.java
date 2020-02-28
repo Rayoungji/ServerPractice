@@ -1,8 +1,8 @@
-package com.practice.service.notice;
+package com.practice.domain.notice.service;
 
-import com.practice.domain.notice.Notice;
-import com.practice.domain.notice.NoticeRepository;
-import com.practice.web.notice.dto.NoticeUpdateDto;
+import com.practice.domain.notice.domain.Notice;
+import com.practice.domain.notice.domain.NoticeRepository;
+import com.practice.domain.notice.dto.NoticeUpdateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

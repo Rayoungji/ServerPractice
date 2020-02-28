@@ -1,6 +1,6 @@
 package com.practice.web;
 
-import com.practice.web.hello.controller.HelloController;
+import com.practice.domain.hello.controller.HelloController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

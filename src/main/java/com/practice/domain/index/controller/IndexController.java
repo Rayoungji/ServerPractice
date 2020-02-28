@@ -1,13 +1,12 @@
-package com.practice.web.index.controller;
+package com.practice.domain.index.controller;
 
-import com.practice.service.notice.NoticeService;
-import com.practice.web.notice.dto.NoticeGetDto;
+import com.practice.domain.notice.service.NoticeService;
+import com.practice.domain.notice.dto.NoticeGetDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.stream.Collectors;
 

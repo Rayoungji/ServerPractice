@@ -1,6 +1,6 @@
-package com.practice.web.notice.dto;
+package com.practice.domain.notice.dto;
 
-import com.practice.domain.notice.Notice;
+import com.practice.domain.notice.domain.Notice;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
