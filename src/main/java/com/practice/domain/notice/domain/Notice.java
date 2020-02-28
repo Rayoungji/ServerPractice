@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @AttributeOverride(name = "id", column = @Column(name = "notice_id"))
 public class Notice extends JpaBasePersistable {
 
