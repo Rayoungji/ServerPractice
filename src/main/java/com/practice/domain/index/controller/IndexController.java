@@ -1,5 +1,6 @@
 package com.practice.domain.index.controller;
 
+import com.practice.config.auth.dto.SessionUser;
 import com.practice.domain.notice.service.NoticeService;
 import com.practice.domain.notice.dto.NoticeGetDto;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpSession;
 import java.util.stream.Collectors;
 
 @Controller
@@ -15,10 +17,16 @@ import java.util.stream.Collectors;
 public class IndexController {
 
     private final NoticeService noticeService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model){
         model.addAttribute("notices",noticeService.getAllNotices().stream().map(NoticeGetDto::new).collect(Collectors.toList()));
+        SessionUser user=(SessionUser) httpSession.getAttribute("user");
+
+        if(user !=null){
+            model.addAttribute("userName",user.getName());
+        }
         return "index";
     }
 
@@ -32,4 +40,5 @@ public class IndexController {
     public String postSave(){
         return "notices-save";
     }
+
 }
