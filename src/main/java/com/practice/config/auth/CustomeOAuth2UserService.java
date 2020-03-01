@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Collections;
 
 /* 소셜 로그인 후 가져온 사용자의 정보들을 기반으로 가입 및 정보수정, 세션 저장등의 기능을 지원하는 서비스 클래스 */
+/*깃허브 이름 바꿨는데 적용될라나??????*/
 @RequiredArgsConstructor
 @Service
 public class CustomeOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
