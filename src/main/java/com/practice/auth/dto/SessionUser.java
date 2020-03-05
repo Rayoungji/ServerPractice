@@ -1,4 +1,4 @@
-package com.practice.config.auth.dto;
+package com.practice.auth.dto;
 
 import com.practice.domain.user.domain.User;
 import lombok.Getter;

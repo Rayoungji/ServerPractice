@@ -1,5 +1,6 @@
-package com.practice.config.auth;
+package com.practice.config;
 
+import com.practice.auth.service.CustomOAuth2UserService;
 import com.practice.domain.user.domain.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,7 +17,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class securityConfig extends WebSecurityConfigurerAdapter {
 
     //소셜로그인 성공 후 가져온 정보를 바탕으로 추가로 진행하고자 하는 기능들 명시한 클래스
-    private final CustomeOAuth2UserService customeOAuth2UserService;
+    private final CustomOAuth2UserService customOAuth2UserService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -34,6 +35,6 @@ public class securityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                     .oauth2Login()
                         .userInfoEndpoint()
-                            .userService(customeOAuth2UserService);
+                            .userService(customOAuth2UserService);
     }
 }

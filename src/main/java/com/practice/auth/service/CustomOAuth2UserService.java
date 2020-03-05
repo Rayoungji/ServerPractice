@@ -1,7 +1,7 @@
-package com.practice.config.auth;
+package com.practice.auth.service;
 
-import com.practice.config.auth.dto.OAuthAttributes;
-import com.practice.config.auth.dto.SessionUser;
+import com.practice.auth.dto.OAuthAttributes;
+import com.practice.auth.dto.SessionUser;
 import com.practice.domain.user.domain.User;
 import com.practice.domain.user.domain.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,20 +18,23 @@ import javax.servlet.http.HttpSession;
 import java.util.Collections;
 
 /* 소셜 로그인 후 가져온 사용자의 정보들을 기반으로 가입 및 정보수정, 세션 저장등의 기능을 지원하는 서비스 클래스 */
-/*깃허브 이름 바꿨는데 적용될라나??????*/
 @RequiredArgsConstructor
 @Service
-public class CustomeOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
+public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
     private final UserRepository userRepository;
     private final HttpSession httpSession;
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        OAuth2UserService delegate=new DefaultOAuth2UserService();
-        OAuth2User oAuth2User=delegate.loadUser(userRequest);
-        String registrationId=userRequest.getClientRegistration().getRegistrationId();
-        String userNameAttributeName=userRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
+        OAuth2UserService delegate = new DefaultOAuth2UserService();
+        OAuth2User oAuth2User = delegate.loadUser(userRequest);
+        String registrationId = userRequest.getClientRegistration().getRegistrationId();
+        String userNameAttributeName =
+                userRequest.getClientRegistration()
+                    .getProviderDetails()
+                    .getUserInfoEndpoint()
+                    .getUserNameAttributeName();
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
         User user = saveOrUpdate(attributes);
@@ -46,7 +49,7 @@ public class CustomeOAuth2UserService implements OAuth2UserService<OAuth2UserReq
 
     private User saveOrUpdate(OAuthAttributes attributes) {
         User user = userRepository.findByEmail(attributes.getEmail())
-                .map(entitiy -> entitiy.update(attributes.getName(), attributes.getPicture()))
+                .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
                 .orElse(attributes.toEntity());
 
         return userRepository.save(user);

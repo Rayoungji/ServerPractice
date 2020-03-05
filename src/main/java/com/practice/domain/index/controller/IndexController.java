@@ -1,6 +1,6 @@
 package com.practice.domain.index.controller;
 
-import com.practice.config.auth.dto.SessionUser;
+import com.practice.auth.dto.SessionUser;
 import com.practice.domain.notice.service.NoticeService;
 import com.practice.domain.notice.dto.NoticeGetDto;
 import lombok.RequiredArgsConstructor;

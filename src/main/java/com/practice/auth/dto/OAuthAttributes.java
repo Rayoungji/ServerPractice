@@ -1,10 +1,9 @@
-package com.practice.config.auth.dto;
+package com.practice.auth.dto;
 
 import com.practice.domain.user.domain.Role;
 import com.practice.domain.user.domain.User;
 import lombok.Builder;
 import lombok.Getter;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Map;
 
